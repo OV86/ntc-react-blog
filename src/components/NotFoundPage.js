@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// Page not found component that gets displayed every time a route is not found
 const NotFoundPage = () => (
   <div className="row">
     <div className="col-lg-12">

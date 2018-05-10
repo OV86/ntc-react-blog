@@ -7,6 +7,7 @@ import ContactPage from '../components/ContactPage';
 import NotFoundPage from '../components/NotFoundPage';
 import PostDetailsPage from '../components/PostDetailsPage';
 
+// Sets up routing and passes the components to routes
 const AppRouter = () => (
   <BrowserRouter>
     <div>

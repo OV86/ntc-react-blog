@@ -1,6 +1,7 @@
 import { createStore, combineReducers } from 'redux';
 import postsReducer from '../reducers/posts';
 
+// Configures the redux store
 export default () => {
   /* eslint-disable no-underscore-dangle */
   const store = createStore(

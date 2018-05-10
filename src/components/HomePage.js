@@ -1,6 +1,7 @@
 import React from 'react';
 import PostsList from '../components/PostsList';
 
+// landing page component. Renders the PostsList component
 const HomePage = () => (
   <div className="row">
     <div className="col-lg-12">

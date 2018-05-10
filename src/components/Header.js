@@ -1,8 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+// header component that contains a navbar
 const Header = () => (
-  <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+  <nav className="navbar sticky-top navbar-expand-lg navbar-light">
     <button
       className="navbar-toggler"
       type="button"

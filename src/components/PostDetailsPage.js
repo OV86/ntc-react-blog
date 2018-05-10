@@ -3,7 +3,10 @@ import { connect } from 'react-redux';
 import { deletePost } from '../actions/posts';
 import NotFoundPage from './NotFoundPage';
 
+// lists the content and details of each post and allows to delete the PostListItem component
 class PostDetailsPage extends React.Component {
+  // calls the deletePost action generator that deletes a post
+  // Takes 1 argument which is an object with the post ID
   onRemove = () => {
     this.props.deletePost({ id: this.props.post.id });
     this.props.history.push('/');
@@ -37,15 +40,18 @@ class PostDetailsPage extends React.Component {
     }
   }
 }
-
+/* Maps state to props and finds a post from the posts array that matches the
+route parameter ID with the post id. Post ID needs to be converted to string format  */
 const mapStateToProps = (state, props) => {
   return {
     post: state.posts.find((post) => post.id.toString() === props.match.params.id)
   };
 };
 
+// maps dispatch to props and gives acces to the deletePost action generator
 const mapDispatchToProps = (dispatch) => ({
   deletePost: (post) => dispatch(deletePost(post))
 });
 
+// connect the component to the redux store
 export default connect(mapStateToProps, mapDispatchToProps)(PostDetailsPage);

@@ -1,5 +1,6 @@
 import React from 'react';
 
+// simple component that displays the contact details
 const ContactPage = () => (
   <div className="row">
     <div className="col-lg-12">

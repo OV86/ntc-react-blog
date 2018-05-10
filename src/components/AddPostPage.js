@@ -3,12 +3,17 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { addPost } from '../actions/posts';
 
+// component for adding a new post
 class AddPostPage extends React.Component {
+  // uses a proxy created in task 3 to fetch new posts when the user clicks Add post button
   onClick = () => {
     axios.get('https://ov86-ntc-proxy-api.herokuapp.com/posts')
       .then((response) => {
+        // randomly picks a post from the array of posts returned by the API
         const randomPost = response.data[Math.floor(Math.random() * response.data.length)];
+        // calls addPost action generator to add a new post to the redux store
         this.props.addPost(randomPost);
+        // sends the user back to the homepage
         this.props.history.push('/');
       })
       .catch((error) => {
@@ -17,6 +22,7 @@ class AddPostPage extends React.Component {
   };
 
   render() {
+    // returns the addPostPage component
     return (
       <div className="row">
         <div className="col-lg-12">
@@ -33,8 +39,10 @@ class AddPostPage extends React.Component {
   }
 }
 
+// gives access to props and allows addPost to dispatch actions
 const mapDispatchToProps = (dispatch) => ({
   addPost: (post) => dispatch(addPost(post))
 });
 
+// connects the component to the redux store
 export default connect(undefined, mapDispatchToProps)(AddPostPage);
