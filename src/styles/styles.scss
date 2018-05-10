@@ -1,5 +1,30 @@
 @import './base/settings';
 @import './base/base';
 
+// Header styles
+.navbar-nav {
+  font-size: $m-size * 1.2;
+  background-color: rgb(248, 248, 248);
+  text-transform: uppercase;
+  margin: $l-size 0;
+  font-weight: 300;
+}
+
+.jumbotron {
+  background-color: rgb(248, 248, 248);
+}
+
+.contact-us {
+  font-size: $m-size;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.post-list-item {
+  margin: $s-size 0;
+}
+
 
 
