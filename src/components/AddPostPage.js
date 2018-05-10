@@ -5,7 +5,7 @@ import { addPost } from '../actions/posts';
 
 class AddPostPage extends React.Component {
   onClick = () => {
-    axios.get('https://jsonplaceholder.typicode.com/posts/')
+    axios.get('https://ov86-ntc-proxy-api.herokuapp.com/posts')
       .then((response) => {
         const randomPost = response.data[Math.floor(Math.random() * response.data.length)];
         this.props.addPost(randomPost);
